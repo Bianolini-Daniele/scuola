@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="277.0" prefWidth="462.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.bianolini.scadenza_abbonamento.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="65.0" prefWidth="422.0">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="445.0" text="Seleziona la data in cui è stato creato l'abbonamento" />
+            <DatePicker layoutY="100.0" prefHeight="25.0" prefWidth="171.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </DatePicker>
+         </children>
+      </VBox>
+      <Label text="Seleziona il tipo di abbonamento" />
+      <HBox alignment="BASELINE_CENTER" prefHeight="33.0" prefWidth="421.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="Mensile" />
+            <RadioButton mnemonicParsing="false" text="Semestrale" />
+            <RadioButton mnemonicParsing="false" text="Annuale" />
+         </children>
+      </HBox>
+      <HBox alignment="BASELINE_CENTER" prefHeight="33.0" prefWidth="421.0">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="445.0" text="L'abbonamento scadrà il: " />
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="445.0" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
