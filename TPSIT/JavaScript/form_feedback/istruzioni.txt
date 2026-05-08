@@ -1,0 +1,17 @@
+Crea una pagina HTML con un modulo di feedback che contenga:
+- nome
+- email
+- data del feedback
+- ora del feedback
+- una select per il tipo di feedback
+- messaggio
+- checkbox "Iscriviti alla newsletter"
+ 
+Quando l’utente invia il modulo, JavaScript deve controllare che i campi obbligatori siano compilati.
+Se manca qualche dato, deve comparire un messaggio di avviso e il modulo non deve proseguire.
+Se i dati sono corretti, mostra nella pagina un messaggio riepilogativo con le informazioni inserite.
+Indizi:
+- per la checkbox può esserti utile .checked
+- per i campi di testo può esserti utile .trim()
+- per la select può esserti utile .value
+- per scrivere il risultato nella pagina può esserti utile .textContent

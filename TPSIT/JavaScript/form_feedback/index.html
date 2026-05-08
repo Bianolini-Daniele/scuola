@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
-    
+    <h1>Modulo di feedback</h1>
+    <form id="formUtente">
+        <p>Nome:</p>
+        <label for="nome"></label>
+        <input type="text" id="nome" name="nome">
+        <br><br>
+
+        <p>Email:</p>
+        <label for="email"></label>
+        <input type="text" id="email" name="email">
+        <br><br>
+
+        <p>Data del feedback:</p>
+        <label for="data"></label>
+        <input type="date" id="data" name="data">
+        <br><br>
+
+        <p>Ora del feedback:</p>
+        <time for = "ora"></time>
+        <input type="time" id="ora" name="ora">
+        <br><br>
+
+        <p>Tipo di feedback:</p>
+        <select for = "tipo">
+            <option>Richiesta</option>
+            <option>Suggerimento</option>
+            <option>Correzione</option>
+            <option>Lode</option>
+        </select>
+        <br><br>
+
+        <p>Messaggio: </p>
+        <label for="messaggio" style="font-size: medium;"></label>
+        <input type="text" id="messaggio" name="messaggio">
+        <br><br>
+
+        <input type = "checkbox" id = "checkbox" name = "checkbox">
+        <label>Iscriviti alla newsletter</label>
+        <br><br>
+
+        <button type="btn">Invia feedback</button>
+    </form>
+
+    <p id="messaggio"></p>
 </body>
+
 </html>
