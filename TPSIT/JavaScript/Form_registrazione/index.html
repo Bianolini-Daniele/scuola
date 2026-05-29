@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Form d'iscrizione</title>
+</head>
+<body>
+    <h1>Inserisci i tuoi dati</h1>
+    <form id="formUtente">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <br><br>
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="data">
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <br><br>
+        <label for="corso">Tipo di corso:</label>
+        <select id="corso" name="corso">
+            <option value="">Seleziona un'opzione</option>
+            <option value="Python">Maggio - Corso base Python</option>
+            <option value="JS">Giugno - Corso base JavaScript</option>
+            <option value="HTML_e_CSS">Luglio - Corso HTML e CSS</option>
+            <option value="C++">Settembre - Corso base C++</option>
+            <option value="database">Ottobre - Corso basi di database</option>
+        </select>
+        <br><br>
+        <label for="modalità">Modalità del corso:</label>
+        <select id="modalità" name="modalità">
+            <option value="">Seleziona un'opzione</option>
+            <option value="Presenza">Presenza</option>
+            <option value="Online">Online</option>
+        </select>
+        <br><br>
+        <label for="iscr">Iscriviti alla newsletter</label>
+        <input type="checkbox" id="iscr" name="iscr">
+        <br><br>
+        <button type="submit">Invia</button>
+        <br><br><br>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Email</th>
+                <th>Tipo</th>
+                <th>Modalità</th>
+                <th>Newsletter</th>
+                <th>Vuoi eliminare?</th>
+            </tr>
+        </thead>
+
+        <tbody id="tabellaFeedback"></tbody>
+
+    </table>
+</body>
+</html>
