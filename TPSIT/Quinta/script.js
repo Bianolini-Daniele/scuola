@@ -23,7 +23,21 @@ function gestisciSubmit(event){
         return
     }
 
-    //checkbox ? va a controllare se la checkbox è stata spuntata o no e, di conseguenza, da al valore "iscrizione" si o no
+    //checkbox ? (è un operatore ternario) va a controllare se la checkbox è stata spuntata o no e, di conseguenza, da al valore "iscrizione" si o no
     const iscrizione = checkbox ? "Si" : "No";
+
+
+    //per creare le celle e inserire i nuovi dati, serve usare un ciclo
+    const riga = document.createElement("tr"); //crea una riga nella tabella
+
+    const dato = {
+        nome,
+        email,
+        data,
+        ora,
+        tipo,
+        messaggio,
+        iscrizione,
+    }
 
 }
