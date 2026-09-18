@@ -40,11 +40,23 @@ function gestisciSubmit(event){
     for(let i=0; i<valori.length;i++){
         const cella=document.createElement("td");
         cella.textContent = valori[i];
-
+8
         //aggiungere la cella alla riga
         riga.appendChild(cella);
     }
     
-    
+    const cellaAzioni = document.createElement("td");
+
+    //creo bottone elimina e il testo al suo interno
+    const bottoneElimina = document.createElement("button");
+
+    bottoneElimina.textContent("Elimina");
+
+
+    bottoneElimina.addEventListener("click", function(){
+        riga.remove();
+    });
+
+
 
 }
