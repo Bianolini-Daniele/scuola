@@ -58,5 +58,9 @@ function gestisciSubmit(event){
     });
 
 
+    cellaAzioni.appendChild(bottoneElimina);
+
+    riga.appendChild(cellaAzioni);
+
 
 }
