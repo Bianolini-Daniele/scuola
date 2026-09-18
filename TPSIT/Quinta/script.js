@@ -28,16 +28,19 @@ function gestisciSubmit(event){
 
 
     //per creare le celle e inserire i nuovi dati, serve usare un ciclo
+
+    //creo un array per contenere tutti i valori da inserire nella tabella
+    const valori = [nome,email,data,ora,tipo,messaggio,iscrizione]
+
     const riga = document.createElement("tr"); //crea una riga nella tabella
 
-    const dato = {
-        nome,
-        email,
-        data,
-        ora,
-        tipo,
-        messaggio,
-        iscrizione,
+
+    //scorro gli elementi dell'array per inserirli nella tabella
+
+    for(let i=0; i<valori.length;i++){
+        const cella=document.createElement("td");
+        cella.textContent = valori[i];
     }
+    
 
 }
