@@ -1,7 +1,9 @@
+console.log("ciao");
 const formFeedback = document.getElementById("formFeedback");
-const tabellaFeedback = document.getElementByID("tabellaFeedback");
+const messaggio = document.getElementById("messaggio");
+const tabellaFeedback = document.getElementById("tabellaFeedback");
 
-formFeedback.addEventListener("submit", gestisciSubmit);
+document.addEventListener("submit", gestisciSubmit);
 
 const dati = [];
 
@@ -16,8 +18,9 @@ function gestisciSubmit(event){
     const messaggio = document.getElementById("messaggio").value.trim();
     const checkbox = document.getElementById("checkbox").checked;
 
-    if(!nome||!email||!data||!ora||!tipo||!messaggi){
+    if(!nome||!email||!data||!ora||!tipo||!messaggio){
         alert("Compila tutti i campi obbligatori")
+        console.log("qui arriva");
         return
     }
 
@@ -38,7 +41,7 @@ function gestisciSubmit(event){
     for(let i=0; i<valori.length;i++){
         const cella=document.createElement("td");
         cella.textContent = valori[i];
-        
+
         //aggiungere la cella alla riga
         riga.appendChild(cella);
     }
@@ -48,7 +51,7 @@ function gestisciSubmit(event){
     //creo bottone elimina e il testo al suo interno
     const bottoneElimina = document.createElement("button");
 
-    bottoneElimina.textContent("Elimina");
+    bottoneElimina.textContent= "Elimina";
 
 
     bottoneElimina.addEventListener("click", function(){
@@ -59,6 +62,12 @@ function gestisciSubmit(event){
     cellaAzioni.appendChild(bottoneElimina);
 
     riga.appendChild(cellaAzioni);
+
+    tabellaFeedback.appendChild(riga);
+
+    formFeedback.reset();
+
+    messaggio.textContent = "";
 
 
 }
