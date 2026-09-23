@@ -1,0 +1,94 @@
+PIANIFICAZIONE RETE AZIENDALE 
+
+LAN A: 192.168.1.0/24
+LAN B: 192.168.2.0/24
+LAN C (da suddividere con VLSM): 192.168.3.0/24
+Collegamenti WAN punto-punto (AB, AC, BC, AP): 10.10.0.0/16
+Rete pubblica (server di prova): 46.1.1.0/30 (dal blocco 46.0.0.0/8)
+
+
+
+
+C1 - 40 host 
+Prefisso: /26
+Indirizzo di rete: 192.168.3.128
+Maschera: 255.255.255.192
+Host utilizzabili: da 192.168.3.129 a 192.168.3.190
+Broadcast: 192.168.3.191
+Gateway: 192.168.3.129
+
+
+C2 - 90 host 
+
+Prefisso: /25
+Indirizzo di rete: 192.168.3.0
+Maschera: 255.255.255.128
+Host utilizzabili: da 192.168.3.1 a 192.168.3.126
+Broadcast: 192.168.3.127
+Gateway: 192.168.3.1
+
+
+C3 - 25 host 
+
+Prefisso: /27
+Indirizzo di rete: 192.168.3.192
+Maschera: 255.255.255.224
+Host utilizzabili: da 192.168.3.193 a 192.168.3.222
+Broadcast: 192.168.3.223
+Gateway: 192.168.3.193
+
+
+
+
+Collegamento A-B
+Rete: 10.10.0.0/30 - Maschera: 255.255.255.252
+Router A: 10.10.0.1
+Router B: 10.10.0.2
+
+Collegamento A-C
+Rete: 10.10.0.4/30 - Maschera: 255.255.255.252
+Router A: 10.10.0.5
+Router C: 10.10.0.6
+
+Collegamento B-C
+Rete: 10.10.0.8/30 - Maschera: 255.255.255.252
+Router B: 10.10.0.9
+Router C: 10.10.0.10
+
+Collegamento A-P
+Rete: 10.10.0.12/30 - Maschera: 255.255.255.252
+Router A: 10.10.0.13
+Router P: 10.10.0.14
+
+
+Rete: 46.1.1.0/30 - Maschera: 255.255.255.252
+Router P: 46.1.1.1
+Server di prova: 46.1.1.2
+
+
+Router A
+Verso LAN A: 192.168.1.1 / 255.255.255.0
+Verso Router B: 10.10.0.1 / 255.255.255.252
+Verso Router C: 10.10.0.5 / 255.255.255.252
+Verso Router P: 10.10.0.13 / 255.255.255.252
+
+Router B
+Verso LAN B: 192.168.2.1 / 255.255.255.0
+Verso Router A: 10.10.0.2 / 255.255.255.252
+Verso Router C: 10.10.0.9 / 255.255.255.252
+
+Router C
+Verso LAN C2: 192.168.3.1 / 255.255.255.128
+Verso LAN C1: 192.168.3.129 / 255.255.255.192
+Verso LAN C3: 192.168.3.193 / 255.255.255.224
+Verso Router A: 10.10.0.6 / 255.255.255.252
+Verso Router B: 10.10.0.10 / 255.255.255.252
+
+Router P
+Verso Router A: 10.10.0.14 / 255.255.255.252
+Verso Server: 46.1.1.1 / 255.255.255.252
+
+
+Server di prova
+IP: 46.1.1.2 / 255.255.255.252
+Gateway: 46.1.1.1
