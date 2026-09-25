@@ -1,0 +1,97 @@
+Esercizi di ripasso di sistemi 
+
+
+4)Indica a quale livello della pila ISO/OSI si collocano i seguenti protocolli
+
+a: Application
+b: Transport
+c: Network
+d: Transport
+e: Application
+
+
+5) Identifica la classe a cui appartengono i seguenti indirizzi IP, dopo averli convertiti in notazione binaria.
+
+a: Classe B
+b: Classe A
+c: Classe B
+d: Classe B
+e: Classe C
+f: Classe C
+
+
+6)  Indica se le seguenti coppie di indirizzi IP appartengono alla stessa rete.
+
+a: si
+b: no
+c: no
+d: si
+e: 
+f: 
+
+
+ 
+7) Data la rete 191.15.20.0/24 suddividi la rete in 6 sottoreti, aventi rispettivamente 50, 30, 20, 20, 10 e 5 hosts utilizzando il subnetting con maschera variabile (VLSM). Indica l’indirizzo di rete dell’host numero 6 della sottorete 2, dell’host numero 1 della sottorete 4 e dell’host numero 1 della sottorete 6.
+
+
+Subnet 1:
+
+Host richiesti: 50
+Prefisso: /26
+IP: 191.15.20.0
+Primo Host valido: 191.15.20.1
+Ultimo Host valido:191.15.20.62
+Broadcast: 191.15.20.63
+
+
+Subnet 2:
+
+Host richiesti: 30
+Prefisso: /27
+IP: 191.15.20.64
+Primo Host valido: 191.15.20.65
+Ultimo Host valido: 191.15.20.94
+Broadcast: 191.15.20.95
+ 
+
+
+Subnet 3:
+
+Host richiesti: 20
+Prefisso: /27
+IP: 191.15.20.96
+Primo Host valido: 191.15.20.97
+Ultimo Host valido: 191.15.20.126
+Broadcast: 191.15.20.127
+
+
+Subnet 4:
+
+Host richiesti: 20
+Prefisso: /27
+IP: 191.15.20.128
+Primo Host valido: 191.15.20.129
+Ultimo Host valido: 191.15.20.158
+Broadcast: 191.15.20.159
+
+
+Subnet 5:
+
+Host richiesti: 10
+Prefisso: /28
+IP: 191.15.20.160
+Primo Host valido: 191.15.20.161
+Ultimo Host valido: 191.15.20.174
+Broadcast: 191.15.20.175
+
+
+Subnet 6:
+
+Host richiesti: 5
+Prefisso: /29
+IP: 191.15.20.176
+Primo Host valido: 191.15.20.177
+Ultimo Host valido: 191.15.20.182
+Broadcast:191.15.20.183
+
+
