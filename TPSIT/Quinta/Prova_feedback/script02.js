@@ -1,36 +1,26 @@
-//aggiungere local store per salvare i dati
-
-/*
-PROCEDIMENTO:
-
-1) recuperare dati salvati
-2) visualizzare in tabella
-3) salvare i nuovi feedback
-4) aggiornare il localStorage anche se elimino feedback
-
-*/
-
-function salvaDati(){
-
-}
-
 
 const formFeedback = document.getElementById("formFeedback");
-const messaggio = document.getElementById("messaggio");
+const messaggio = document.getElementById("avviso");
 const tabellaFeedback = document.getElementById("tabellaFeedback");
+const eliminaTutto = document.getElementById("eliminaTutto");
 formFeedback.addEventListener("submit", gestiscisubmit);
+eliminaTutto.addEventListener("click", cancellaTutto);        
 
 
 //const dati = [];
 
-//recupera le string dal localstorage e le converte in codice leggibile da javascript
+//prendo le string dal localstorage e le converte in codice javascript
 
 const dati = JSON.parse(localStorage.getItem("feedback")) || [];
 
 
+function salvaDati(){
+    localStorage.setItem("feedback", JSON.stringify(dati));
+}
+
 
 function creaRiga(valori) {
-    const campi = ["nome", "email", "data", "ora", "tipo", "messaggio", "checkbox"];
+    const campi = ["nome", "email", "data", "ora", "tipofeedback", "testofeedback", "iscrizione"];
     const riga = document.createElement("tr");
     for (let i=0; i < campi.length; i++) {
         const cella = document.createElement("td");
@@ -49,6 +39,7 @@ function creaRiga(valori) {
         if (indice !== -1) {
             dati.splice(indice, 1);
         }
+        salvaDati(); // aggiorno il localStorage
         riga.remove();
     });
 
@@ -57,6 +48,17 @@ function creaRiga(valori) {
     tabellaFeedback.appendChild(riga);
 
 
+}
+
+for (let i = 0; i < dati.length; i++) {
+    creaRiga(dati[i]);
+}
+
+
+function cancellaTutto() {
+    dati.splice(0, dati.length);     // svuota l'array
+    salvaDati();                  
+    tabellaFeedback.innerHTML = "";  
 }
 
 
@@ -80,7 +82,7 @@ function gestiscisubmit(event) {
     const valori = { nome, email, data, ora, tipofeedback, testofeedback, iscrizione };
     dati.push(valori);
 
-    localStorage.setItem("feedback", JSON.stringify(dati));
+    salvaDati(); // al posto di localStorage.setItem(...), stessa cosa ma più corto
     creaRiga(valori);
 
     // aggiungiCellaAzioni(riga, valori);
