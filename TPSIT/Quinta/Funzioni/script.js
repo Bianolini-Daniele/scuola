@@ -5,6 +5,30 @@ const risultato=document.getElementById("risultato")
 
 formAcquisto.addEventListener("submit", gestisciSubmit);
 
+function gestisciSubmit(event){
+    event.preventDefault()
+
+    //recupero il nome del prodotto
+    const prodotto=document.getElementById("prodotto").value.trim();
+
+    //prendiamo il prezzo
+    //Number() la converte in numero
+    const prezzo= Number(document.getElementById("prezzo").value);
+    
+    //prendiamo la quantita
+    const quantita= Number(document.getElementById("quantita").value);
+
+    const subtotale=calcolaSubtotale(prezzo,quantita);
+
+    const sconto=calcolaSconto(subtotale);
+
+    const totale=calcolaTotale(subtotale,sconto);
+
+    mostraRisultato(prodotto,subtotale,sconto,totale)
+
+
+}
+
 
 function calcolaSubtotale(prezzo, quantita){
     const subtotale= prezzo*quantita;
@@ -32,26 +56,3 @@ function mostraRisultato(prodotto,subtotale,sconto,totale){
      `Sconto: ${sconto} euro - Totale: ${totale} euro`;
 }
 
-function gestisciSubmit(event){
-    event.preventDefault()
-
-    //recupero il nome del prodotto
-    const prodotto=document.getElementById("prodotto").value.trim();
-
-    //prendiamo il prezzo
-    //Number() la converte in numero
-    const prezzo= Number(document.getElementById("prezzo").value);
-    
-    //prendiamo la quantita
-    const quantita= Number(document.getElementById("quantita").value);
-
-    const subtotale=calcolaSubtotale(prezzo,quantita);
-
-    const sconto=calcolaSconto(subtotale);
-
-    const totale=calcolaTotale(subtotale,sconto);
-
-    mostraRisultato(prodotto,subtotale,sconto,totale)
-
-
-}

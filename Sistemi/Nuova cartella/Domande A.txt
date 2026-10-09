@@ -1,0 +1,65 @@
+Domande A
+
+
+A1: 
+
+- prima riga della richiesta GET:
+GET / HTTP/1.1
+Host: 10.4.51.31:8080
+User-Agent: curl/8.13.0
+Accept: */*
+
+- prima riga della risposta:
+HTTP/1.1 200 OK
+Server: OsservatorioHTTP/1.0
+Date: Thu, 08 Oct 2026 09:17:40 GMT
+X-Lab-Server: osservatorio-http
+Cache-Control: no-store
+Content-Type: text/html; charset=utf-8
+Content-Length: 6023
+
+- I codici di stato compaiono nelle risposte.
+
+
+
+
+A2:
+
+-Valori Host e User-Agent:
+Host: 10.4.51.31:8080
+User-Agent: curl/8.13.0
+
+-Valori Server, Content-Type e Content Lenght:
+Server: OsservatorioHTTP/1.0
+Content-Type: text/html; charset=utf-8
+Content-Length: 6023
+
+- Host contiene 8080 perché è la porta su cui il Server hosta
+
+
+
+
+A3:
+
+- I quattro Byte che separano Header e Body sono 0d 0a 0d 0a
+
+- Si, corrispondono
+
+- Il body ha contenuto HTML
+
+
+
+
+A4:
+
+HEAD può dichiarare una lunghezza positiva senza trasmettere il body perché contiene le stesse intestazioni senza però contenere il body
+
+
+
+
+A5:
+
+IP Server: 10.4.51.31
+Porta Server: 8080
+
+- Non potrebbe leggere il traffico in HTTPS perché la crittografia sarebbe cifrata in modo incomprensibile.
