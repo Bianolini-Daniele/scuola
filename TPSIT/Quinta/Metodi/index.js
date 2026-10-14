@@ -162,3 +162,102 @@ const prodottiOrdinatiPerPrezzo = [...prodotti].sort((a, b) => {
 })
 console.log("Prodotti ordinati per prezzo crescente")
 console.table(prodottiOrdinatiPerPrezzo)
+
+
+
+
+
+
+//compito
+
+const eventi = [
+
+ { id: 1, titolo: "Torneo di robotica", categoria: "Tecnologia", costo: 12, posti: 24, iscritti: 18, attivo: true },
+
+ { id: 2, titolo: "Laboratorio di fotografia", categoria: "Arte", costo: 8, posti: 15, iscritti: 15, attivo: true },
+
+ { id: 3, titolo: "Visita al museo della scienza", categoria: "Scienze", costo: 20, posti: 30, iscritti: 21, attivo: true },
+
+ { id: 4, titolo: "Corso di primo soccorso", categoria: "Formazione", costo: 0, posti: 20, iscritti: 12, attivo: false },
+
+ { id: 5, titolo: "Hackathon scolastico", categoria: "Tecnologia", costo: 5, posti: 40, iscritti: 35, attivo: true },
+
+ { id: 6, titolo: "Teatro serale", categoria: "Cultura", costo: 15, posti: 25, iscritti: 9, attivo: true }
+
+];
+
+
+//ESERCIZIO 1
+const postiLiberi = (evento) => {
+    return evento.posti - evento.iscritti
+}
+
+console.log("\nESERCIZIO 1")
+eventi.forEach((evento) => {
+    console.log(`${evento.titolo} | posti liberi: ${postiLiberi(evento)}`)
+})
+console.log("elementi array eventi: ", eventi.length)
+
+
+//ESERCIZIO 2
+const eventiConDisponibilita = eventi.map((evento) => {
+    return {...evento, postiLiberi: postiLiberi(evento)}
+})
+
+console.log("\nESERCIZIO 2")
+console.table(eventiConDisponibilita)
+console.table(eventi)
+
+
+//ESERCIZIO 3
+const eventiPrenotabili = eventi.filter((evento) => {
+    return evento.attivo && postiLiberi(evento) > 0
+})
+
+const eventiTecnologia = eventi.filter((evento) => {
+    return evento.categoria === "Tecnologia"
+})
+
+console.log("\nESERCIZIO 3")
+console.table(eventiPrenotabili)
+console.table(eventiTecnologia)
+console.table(eventi)
+
+
+//ESERCIZIO 4
+console.log("\nESERCIZIO 4")
+const evento3 = eventi.find((evento) => {
+    return evento.id === 3
+})
+
+if (evento3) {
+    console.log(evento3.titolo, "-", evento3.iscritti, "iscritti")
+} else {
+    console.log("Evento non trovato")
+}
+
+const eventoCompleto = eventi.find((evento) => {
+    return postiLiberi(evento) === 0
+})
+console.log("Primo evento completo: ", eventoCompleto.titolo)
+
+const eventoInesistente = eventi.find((evento) => {
+    return evento.id === 99
+})
+
+if (eventoInesistente === undefined) {
+    console.log("Evento non trovato")
+}
+
+
+//ESERCIZIO 5
+console.log("\nESERCIZIO 5")
+const totaleIscritti = eventi.reduce((totale, evento) => {
+    return evento.attivo ? totale + evento.iscritti : totale
+},0)
+console.log("Il totale degli iscritti agli eventi attivi è ", totaleIscritti)
+
+const incassoPrevisto = eventi.reduce((totale, evento) => {
+    return evento.attivo ? totale + evento.costo * evento.iscritti : totale
+},0)
+console.log("L'incasso previsto degli eventi attivi è ", incassoPrevisto, " euro")
