@@ -1,0 +1,7 @@
+Comandi Node
+
+node -v
+node .\index.js
+
+
+node --watch index.js
